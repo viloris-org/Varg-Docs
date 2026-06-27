@@ -1,0 +1,71 @@
+---
+title: Varg ドキュメント
+description: Varg のスクリプト構文、エディターワークフロー、プロジェクトのパッケージ化を学びます。
+template: splash
+hero:
+  tagline: AI ネイティブなゲーム制作のための日本語マニュアル
+  image:
+    alt: Varg documentation mark
+    file: ../../../assets/varg-docs-hero.svg
+  actions:
+    - text: スクリプト学習を始める
+      link: /ja/scripting/basics/
+      icon: right-arrow
+    - text: クイックスタート
+      link: /ja/getting-started/
+      variant: secondary
+---
+
+<section className="varg-future-panel" aria-label="Varg documentation learning overview">
+  <div className="varg-signal-grid">
+    <a className="varg-signal-card" href="/ja/getting-started/">
+      <span className="varg-signal-kicker">01 / Setup</span>
+      <strong>エディターを起動する</strong>
+      <span>まず、プロジェクト、シーン、スクリプトをどこに置くかを確認します。</span>
+    </a>
+    <a className="varg-signal-card" href="/ja/scripting/basics/">
+      <span className="varg-signal-kicker">02 / Script</span>
+      <strong>最初のゲームプレイを書く</strong>
+      <span>現在実行できるサブセットで、ライフサイクル、入力、状態を理解します。</span>
+    </a>
+    <a className="varg-signal-card" href="/ja/tutorials/first-playable-loop/">
+      <span className="varg-signal-kicker">03 / Loop</span>
+      <strong>遊べるループを組み立てる</strong>
+      <span>移動、取得、カウントダウン、HUD をひとつの閉じた流れにします。</span>
+    </a>
+  </div>
+  <div className="varg-runtime-strip" aria-label="Core workflow">
+    <span>設計意図</span>
+    <span>スクリプト状態</span>
+    <span>エディター確認</span>
+    <span>パッケージ公開</span>
+  </div>
+</section>
+
+:::note[現在の状態]
+Varg の言語仕様は、目標設計と現在実行可能な MVP に分かれています。このマニュアルのスクリプトチュートリアルでは、現在実行できるサブセットを優先します。`.vscene`、`.vmodel`、`.vasset`、将来の API に触れる箇所では、そのことを明記します。
+:::
+
+## 推奨学習ルート
+
+### ルート A：はじめて触る
+
+1. [クイックスタート](/ja/getting-started/) を読み、エディターとサンプルプロジェクトの場所を確認します。
+2. プログラミング経験がない場合は、先に [ゼロからのスクリプト入門](/ja/scripting/programming-primer/) を読み、変数、関数、条件、毎フレーム更新を理解します。
+3. [スクリプト基礎](/ja/scripting/basics/) と [ライフサイクルと入力](/ja/scripting/lifecycle-input/) を読み、スクリプトをどこに付けるか、いつ動くか、どう入力を読むかを理解します。
+4. [制御フローと待機](/ja/scripting/control-flow/) では、`if`、タイマー、単純なループだけを押さえます。`wait()` は、まず「そういう道具がある」と分かれば十分です。
+5. [基礎から応用へ：ゲームプレイスクリプトを整理する](/ja/scripting/gameplay-loop-patterns/) を読み、変数、入力、タイマー、HUD を明確なゲームプレイループにまとめます。
+
+### ルート B：ゲームプレイを作り始める
+
+1. [状態、変数、エクスポート](/ja/scripting/state-export/) を読み、「調整用パラメータ」と「実行時状態」を分けます。
+2. 完全な `update()` の組み立て方がまだ見えていない場合は、先に [ゲームプレイスクリプトを整理する](/ja/scripting/gameplay-loop-patterns/) を読みます。
+3. [中級演習：遊べる収集ループを作る](/ja/tutorials/first-playable-loop/) を進め、移動、取得、得点、カウントダウン、HUD を接続します。
+4. [サンプル解説](/ja/scripting/examples/) から小さなスクリプトをひとつ選んで読みます。一度に全部読む必要はありません。
+5. [エンドレスジャンプを作る](/ja/tutorials/jump-jump/) に取り組みます。射撃訓練場よりも、最初の完全なプロジェクトとして扱いやすいです。
+
+### ルート C：拡張と仕上げ
+
+1. [高度なランタイム API](/ja/scripting/advanced-runtime-apis/) を読み、シーン、UI、音声、マウス、描画コマンドをゲームプレイループに接続します。
+2. 次に [射撃訓練場を作る](/ja/tutorials/fps-arena/) を進め、移動、武器、スポーン、勝敗、HUD という複数システムの状態を練習します。
+3. 最後に [エディターワークフロー](/ja/features/editor-workflow/)、[アセットとシーン](/ja/features/assets-scenes/)、[ビルドとパッケージ化](/ja/features/build-package/) を確認します。

@@ -1,0 +1,71 @@
+---
+title: Varg-Dokumentation
+description: Lerne Varg-Skriptsyntax, Editor-Abläufe und Projektpaketierung.
+template: splash
+hero:
+  tagline: Deutschsprachiges Handbuch für AI-native Spieleentwicklung
+  image:
+    alt: Varg documentation mark
+    file: ../../../assets/varg-docs-hero.svg
+  actions:
+    - text: Skripting-Pfad starten
+      link: /de/scripting/basics/
+      icon: right-arrow
+    - text: Schnellstart
+      link: /de/getting-started/
+      variant: secondary
+---
+
+<section className="varg-future-panel" aria-label="Varg documentation learning overview">
+  <div className="varg-signal-grid">
+    <a className="varg-signal-card" href="/de/getting-started/">
+      <span className="varg-signal-kicker">01 / Setup</span>
+      <strong>Editor starten</strong>
+      <span>Prüfe zuerst, wo Projekte, Szenen und Skripte liegen.</span>
+    </a>
+    <a className="varg-signal-card" href="/de/scripting/basics/">
+      <span className="varg-signal-kicker">02 / Script</span>
+      <strong>Erstes Gameplay schreiben</strong>
+      <span>Verstehe Lifecycle, Eingabe und Zustand mit dem aktuell ausführbaren Subset.</span>
+    </a>
+    <a className="varg-signal-card" href="/de/tutorials/first-playable-loop/">
+      <span className="varg-signal-kicker">03 / Loop</span>
+      <strong>Spielbare Schleife bauen</strong>
+      <span>Verbinde Bewegung, Einsammeln, Countdown und HUD zu einem geschlossenen Loop.</span>
+    </a>
+  </div>
+  <div className="varg-runtime-strip" aria-label="Core workflow">
+    <span>Designabsicht</span>
+    <span>Skriptzustand</span>
+    <span>Editor-Vorschau</span>
+    <span>Paketieren</span>
+  </div>
+</section>
+
+:::note[Aktueller Stand]
+Die Varg-Sprachspezifikation trennt Zielentwurf und aktuell ausführbares MVP. Die Skript-Tutorials in diesem Handbuch nutzen bevorzugt das aktuell ausführbare Subset; Stellen mit `.vscene`, `.vmodel`, `.vasset` und zukünftigen APIs sind ausdrücklich markiert.
+:::
+
+## Empfohlener Lernpfad
+
+### Pfad A: Erster Einstieg
+
+1. Lies den [Schnellstart](/de/getting-started/), um Editor und Beispielprojekte zu finden.
+2. Wenn du keine Programmiererfahrung hast, lies zuerst [Skripting für absolute Anfänger](/de/scripting/programming-primer/), um Variablen, Funktionen, Bedingungen und Updates pro Frame zu verstehen.
+3. Lies [Skript-Grundlagen](/de/scripting/basics/) und [Lifecycle und Eingabe](/de/scripting/lifecycle-input/), um zu verstehen, wo Skripte hängen, wann sie laufen und wie Eingaben gelesen werden.
+4. In [Kontrollfluss und Warten](/de/scripting/control-flow/) brauchst du zunächst nur `if`, Timer und eine einfache Schleife. Bei `wait()` reicht es, das Werkzeug zu kennen.
+5. Lies [Von Grundlagen zu Fortgeschritten: Gameplay-Skripte organisieren](/de/scripting/gameplay-loop-patterns/), um Variablen, Eingabe, Timer und HUD zu einem klaren Gameplay-Loop zu ordnen.
+
+### Pfad B: Gameplay bauen
+
+1. Lies [Zustand, Variablen und Export](/de/scripting/state-export/), um "Parameter-Tuning" und "Laufzeitzustand" sauber zu trennen.
+2. Wenn du noch nicht weißt, wie man ein vollständiges `update()` organisiert, lies zuerst [Gameplay-Skripte organisieren](/de/scripting/gameplay-loop-patterns/).
+3. Folge [Zwischenübung: Einen spielbaren Sammel-Loop bauen](/de/tutorials/first-playable-loop/), um Bewegung, Einsammeln, Punkte, Countdown und HUD zu verbinden.
+4. Schau dir die [Beispielanalyse](/de/scripting/examples/) an. Wähle zuerst ein kleines Skript und verstehe es, statt alles auf einmal zu lesen.
+5. Folge [Endloses Springen bauen](/de/tutorials/jump-jump/). Es eignet sich besser als erstes vollständiges Projekt als der Schießstand.
+
+### Pfad C: Erweitern und abschließen
+
+1. Lies [Fortgeschrittene Laufzeit-APIs](/de/scripting/advanced-runtime-apis/), um Szenen, UI, Audio, Maus und Renderbefehle in den Gameplay-Loop einzubinden.
+2. Baue danach den [Schießstand](/de/tutorials/fps-arena/), um Zustand über mehrere Systeme zu üben: Bewegung, Waffen, Spawning, Sieg/Niederlage und HUD.
+3. Lies zum Schluss [Editor-Workflow](/de/features/editor-workflow/), [Assets und Szenen](/de/features/assets-scenes/) und [Build und Paketierung](/de/features/build-package/).

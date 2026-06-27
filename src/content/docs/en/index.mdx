@@ -1,0 +1,71 @@
+---
+title: Varg Docs
+description: Learn Varg scripting syntax, editor workflows, and project packaging.
+template: splash
+hero:
+  tagline: A practical manual for AI-native game creation
+  image:
+    alt: Varg documentation mark
+    file: ../../../assets/varg-docs-hero.svg
+  actions:
+    - text: Start the scripting path
+      link: /en/scripting/basics/
+      icon: right-arrow
+    - text: Getting started
+      link: /en/getting-started/
+      variant: secondary
+---
+
+<section className="varg-future-panel" aria-label="Varg documentation learning overview">
+  <div className="varg-signal-grid">
+    <a className="varg-signal-card" href="/en/getting-started/">
+      <span className="varg-signal-kicker">01 / Setup</span>
+      <strong>Launch the editor</strong>
+      <span>First confirm where projects, scenes, and scripts live.</span>
+    </a>
+    <a className="varg-signal-card" href="/en/scripting/basics/">
+      <span className="varg-signal-kicker">02 / Script</span>
+      <strong>Write your first gameplay</strong>
+      <span>Use the executable subset to understand lifecycle, input, and state.</span>
+    </a>
+    <a className="varg-signal-card" href="/en/tutorials/first-playable-loop/">
+      <span className="varg-signal-kicker">03 / Loop</span>
+      <strong>Build a playable loop</strong>
+      <span>Connect movement, pickup, countdown, and HUD into one loop.</span>
+    </a>
+  </div>
+  <div className="varg-runtime-strip" aria-label="Core workflow">
+    <span>Design intent</span>
+    <span>Script state</span>
+    <span>Editor preview</span>
+    <span>Package release</span>
+  </div>
+</section>
+
+:::note[Current status]
+The Varg language spec is split between target design and the currently executable MVP. This manual prioritizes the executable scripting subset; `.vscene`, `.vmodel`, `.vasset`, and future APIs are marked where relevant.
+:::
+
+## Recommended learning path
+
+### Path A: First session
+
+1. Read [Getting Started](/en/getting-started/) to find the editor and sample projects.
+2. If you have no programming background, start with [Programming Primer](/en/scripting/programming-primer/).
+3. Read [Scripting Basics](/en/scripting/basics/) and [Lifecycle and Input](/en/scripting/lifecycle-input/).
+4. In [Control Flow and Waiting](/en/scripting/control-flow/), learn `if`, timers, and one simple loop.
+5. Read [Organizing Gameplay Scripts](/en/scripting/gameplay-loop-patterns/) to structure a clear gameplay loop.
+
+### Path B: Build gameplay
+
+1. Read [State, Variables, and Exports](/en/scripting/state-export/) to separate tuning parameters from runtime state.
+2. If you are not sure how to organize a full `update()`, read [Organizing Gameplay Scripts](/en/scripting/gameplay-loop-patterns/).
+3. Follow [Intermediate Exercise: Collection Loop](/en/tutorials/first-playable-loop/).
+4. Browse [Example Walkthroughs](/en/scripting/examples/) and understand one small script first.
+5. Follow [Build an Endless Jumper](/en/tutorials/jump-jump/).
+
+### Path C: Expand and finish
+
+1. Read [Advanced Runtime APIs](/en/scripting/advanced-runtime-apis/) to connect scene, UI, audio, mouse, and rendering commands.
+2. Then build [Build a Shooting Range](/en/tutorials/fps-arena/) to practice multi-system state.
+3. Finish with [Editor Workflow](/en/features/editor-workflow/), [Assets and Scenes](/en/features/assets-scenes/), and [Build and Package](/en/features/build-package/).

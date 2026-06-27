@@ -1,0 +1,71 @@
+---
+title: Documentacion de Varg
+description: Aprende la sintaxis de scripting de Varg, el flujo del editor y el empaquetado de proyectos.
+template: splash
+hero:
+  tagline: Manual para creacion de juegos nativa para IA
+  image:
+    alt: Varg documentation mark
+    file: ../../../assets/varg-docs-hero.svg
+  actions:
+    - text: Empezar con scripting
+      link: /es/scripting/basics/
+      icon: right-arrow
+    - text: Inicio rapido
+      link: /es/getting-started/
+      variant: secondary
+---
+
+<section className="varg-future-panel" aria-label="Resumen de aprendizaje de la documentacion de Varg">
+  <div className="varg-signal-grid">
+    <a className="varg-signal-card" href="/es/getting-started/">
+      <span className="varg-signal-kicker">01 / Setup</span>
+      <strong>Iniciar el editor</strong>
+      <span>Primero confirma donde van el proyecto, las escenas y los scripts.</span>
+    </a>
+    <a className="varg-signal-card" href="/es/scripting/basics/">
+      <span className="varg-signal-kicker">02 / Script</span>
+      <strong>Escribir la primera mecanica</strong>
+      <span>Entiende el ciclo de vida, la entrada y el estado con el subconjunto ejecutable actual.</span>
+    </a>
+    <a className="varg-signal-card" href="/es/tutorials/first-playable-loop/">
+      <span className="varg-signal-kicker">03 / Loop</span>
+      <strong>Armar un bucle jugable</strong>
+      <span>Une movimiento, recogida, cuenta atras y HUD en un ciclo cerrado.</span>
+    </a>
+  </div>
+  <div className="varg-runtime-strip" aria-label="Flujo principal">
+    <span>Intencion de diseno</span>
+    <span>Estado del script</span>
+    <span>Vista previa del editor</span>
+    <span>Empaquetado y publicacion</span>
+  </div>
+</section>
+
+:::note[Estado actual]
+La especificacion del lenguaje de Varg se divide entre el diseno objetivo y el MVP ejecutable actual. Los tutoriales de scripting de este manual priorizan el subconjunto ejecutable actual; los lugares que tratan `.vscene`, `.vmodel`, `.vasset` y APIs futuras lo indican de forma explicita.
+:::
+
+## Ruta de aprendizaje recomendada
+
+### Ruta A: primera toma de contacto
+
+1. Lee [Inicio rapido](/es/getting-started/) para confirmar donde estan el editor y los proyectos de ejemplo.
+2. Si no tienes experiencia programando, lee primero [Introduccion al scripting desde cero](/es/scripting/programming-primer/) para entender variables, funciones, condiciones y actualizaciones por frame.
+3. Lee [Conceptos basicos de scripting](/es/scripting/basics/) y [Ciclo de vida y entrada](/es/scripting/lifecycle-input/) para entender donde se monta un script, cuando se ejecuta y como lee entradas.
+4. En [Flujo de control y espera](/es/scripting/control-flow/) aprende solo `if`, temporizadores y un bucle simple. Por ahora basta con saber que `wait()` existe.
+5. Lee [De basico a avanzado: organizar scripts de gameplay](/es/scripting/gameplay-loop-patterns/) para ordenar variables, entrada, temporizadores y HUD en un bucle de juego claro.
+
+### Ruta B: empezar a crear gameplay
+
+1. Lee [Estado, variables y exportacion](/es/scripting/state-export/) para separar "ajustes" de "estado en runtime".
+2. Si aun no sabes organizar un `update()` completo, lee primero [Organizar scripts de gameplay](/es/scripting/gameplay-loop-patterns/).
+3. Sigue [Practica intermedia: crear un bucle de recoleccion jugable](/es/tutorials/first-playable-loop/) para conectar movimiento, recogida, puntuacion, cuenta atras y HUD.
+4. Mira [Desglose de ejemplos](/es/scripting/examples/) y elige primero un script pequeno; no hace falta leerlos todos de una vez.
+5. Sigue [Crear un salto infinito](/es/tutorials/jump-jump/). Es mejor primer proyecto completo que el campo de tiro.
+
+### Ruta C: ampliar y cerrar
+
+1. Lee [APIs avanzadas de runtime](/es/scripting/advanced-runtime-apis/) para integrar escena, UI, audio, raton y comandos de render en el bucle de gameplay.
+2. Despues haz [Crear un campo de tiro](/es/tutorials/fps-arena/) para practicar estado de varios sistemas: movimiento, armas, spawns, victoria/derrota y HUD.
+3. Por ultimo revisa [Flujo de trabajo del editor](/es/features/editor-workflow/), [Recursos y escenas](/es/features/assets-scenes/) y [Compilacion y empaquetado](/es/features/build-package/).
