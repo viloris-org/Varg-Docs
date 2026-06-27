@@ -24,6 +24,20 @@ export default defineConfig({
       social: [
         { icon: 'github', label: 'Varg on GitHub', href: 'https://github.com/viloris-org/Varg' },
       ],
+      head: [
+        {
+          tag: 'script',
+          content: `
+const supportedVargDocsLocales = new Set(['zh', 'en', 'ja', 'es', 'de']);
+const currentVargDocsLocale = window.location.pathname.split('/').filter(Boolean)[0];
+
+if (supportedVargDocsLocales.has(currentVargDocsLocale)) {
+  const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+  document.cookie = 'varg_docs_locale=' + currentVargDocsLocale + '; Max-Age=31536000; Path=/; SameSite=Lax' + secure;
+}
+          `.trim(),
+        },
+      ],
       sidebar: [
         {
           label: '开始',

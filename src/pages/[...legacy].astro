@@ -1,0 +1,71 @@
+---
+const fallbackLocale = 'zh';
+const supportedLocales = ['zh', 'en', 'ja', 'es', 'de'];
+
+export function getStaticPaths() {
+  const legacyRoutes = {
+    'getting-started': 'getting-started',
+    'project-structure': 'project-structure',
+    'scripting/programming-primer': 'scripting/programming-primer',
+    'scripting/basics': 'scripting/basics',
+    basics: 'scripting/basics',
+    'scripting/lifecycle-input': 'scripting/lifecycle-input',
+    'scripting/state-export': 'scripting/state-export',
+    'scripting/control-flow': 'scripting/control-flow',
+    'scripting/gameplay-loop-patterns': 'scripting/gameplay-loop-patterns',
+    'scripting/advanced-runtime-apis': 'scripting/advanced-runtime-apis',
+    'scripting/examples': 'scripting/examples',
+    'tutorials/first-playable-loop': 'tutorials/first-playable-loop',
+    'tutorials/jump-jump': 'tutorials/jump-jump',
+    'tutorials/fps-arena': 'tutorials/fps-arena',
+    'features/editor-workflow': 'features/editor-workflow',
+    'features/assets-scenes': 'features/assets-scenes',
+    'features/build-package': 'features/build-package',
+  };
+
+  return Object.keys(legacyRoutes).map((legacy) => ({
+    params: { legacy },
+    props: { targetPath: legacyRoutes[legacy] },
+  }));
+}
+
+const { targetPath } = Astro.props;
+---
+
+<!doctype html>
+<html lang={fallbackLocale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Varg Docs</title>
+    <script is:inline define:vars={{ fallbackLocale, supportedLocales, targetPath }}>
+      const getCookie = (name) => {
+        const value = document.cookie
+          .split('; ')
+          .find((cookie) => cookie.startsWith(`${name}=`))
+          ?.split('=')
+          .slice(1)
+          .join('=');
+
+        return value ? decodeURIComponent(value) : undefined;
+      };
+
+      const preferredLocale = getCookie('varg_docs_locale');
+      const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+      const browserLocale = languages
+        .map((language) => language.toLowerCase().split('-')[0])
+        .find((language) => supportedLocales.includes(language));
+      const locale =
+        supportedLocales.includes(preferredLocale) ? preferredLocale : browserLocale || fallbackLocale;
+
+      window.location.replace(`/${locale}/${targetPath}/`);
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content={`0; url=/zh/${targetPath}/`} />
+    </noscript>
+  </head>
+  <body>
+    <p><a href={`/zh/${targetPath}/`}>Varg Docs</a></p>
+  </body>
+</html>
