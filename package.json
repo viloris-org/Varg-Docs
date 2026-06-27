@@ -7,13 +7,19 @@
     "dev": "astro dev --host 0.0.0.0",
     "start": "astro dev --host 0.0.0.0",
     "build": "astro build",
-    "preview": "astro preview --host 0.0.0.0"
+    "preview": "npm run build && wrangler dev",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@astrojs/cloudflare": "^14.0.1",
     "@astrojs/starlight": "^0.41.1",
     "astro": "^7.0.3"
+  },
+  "devDependencies": {
+    "wrangler": "^4.105.0"
   }
 }

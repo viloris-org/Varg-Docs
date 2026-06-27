@@ -1,1 +1,2 @@
-# No static assets are ignored for Cloudflare deployment.
+_worker.js
+_routes.json
